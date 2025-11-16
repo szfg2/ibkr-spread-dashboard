@@ -2,42 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <title>IBKR Credit Spreads Dashboard</title>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <h1>IBKR Credit Spreads – Local Dashboard</h1>
+  <div class="container">
+    <h1>IBKR Credit Spreads – Local Dashboard</h1>
 
-  <div class="controls">
-    <button id="btn-daily">Last 24h</button>
-    <button id="btn-all">All history</button>
-    <button id="btn-refresh">Refresh</button>
-    <span id="status"></span>
+    <div class="controls">
+      <button id="btn-daily" class="btn">Last 24h</button>
+      <button id="btn-all" class="btn">All history</button>
+      <button id="btn-refresh" class="btn btn-refresh">Refresh</button>
+      <span id="status" class="status"></span>
+    </div>
+
+    <div class="summary">
+      <span id="summary-title">Last 24h</span>
+      <span class="divider">|</span>
+      Total P&L:
+      <span id="total-pnl">0.00</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="spreads-table">
+        <thead>
+          <tr>
+            <th>Time (SG)</th>
+            <th>Underlying</th>
+            <th>Expiry</th>
+            <th>Type</th>
+            <th>Short</th>
+            <th>Long</th>
+            <th>Qty</th>
+            <th>Credit</th>
+            <th>Debit</th>
+            <th>PnL</th>
+            <th>Short Δ</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
-
-  <div class="summary">
-    <span id="summary-title">Last 24h</span> – 
-    Total P&amp;L: <span id="total-pnl">0.00</span>
-  </div>
-
-  <table id="spreads-table">
-    <thead>
-      <tr>
-        <th>Time (SG)</th>
-        <th>Underlying</th>
-        <th>Expiry</th>
-        <th>Type</th>
-        <th>Short Strike</th>
-        <th>Long Strike</th>
-        <th>Qty</th>
-        <th>Credit</th>
-        <th>Debit</th>
-        <th>Realized PnL</th>
-        <th>Short Δ</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
 
   <script src="app.js"></script>
 </body>
